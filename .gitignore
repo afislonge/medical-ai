@@ -7,6 +7,7 @@ __pycache__/
 *.so
 
 # Distribution / packaging
+Coronahack-Chest-XRay-Dataset/
 .Python
 build/
 develop-eggs/
