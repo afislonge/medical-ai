@@ -2,7 +2,7 @@
 
 ## **Project Overview**
 
-This project employs **Convolutional Neural Networks (CNN)** and pretrained models (such as ResNet, VGG, or EfficientNet) to classify chest X-ray images into conditions like _Normal_, _Pneumonia_, or _COVID-19_. A **Streamlit** application has been developed for interactive user access to the model predictions. The dataset used is the [CoronaHack - Chest X-Ray Dataset](https://www.kaggle.com/datasets/praveengovi/coronahack-chest-xraydataset).
+This project employs **Convolutional Neural Networks (CNN)** and pretrained models (such as ResNet, VGG, or EfficientNet) to classify chest X-ray images into conditions like _Normal_, _Viral Pneumonia_, or _Bacterial Pneumonia_ . A **Streamlit** application has been developed for interactive user access to the model predictions. The dataset used is the [CoronaHack - Chest X-Ray Dataset](https://www.kaggle.com/datasets/praveengovi/coronahack-chest-xraydataset).
 
 ## **Dataset**
 
