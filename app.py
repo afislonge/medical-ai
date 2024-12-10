@@ -26,7 +26,7 @@ uploaded_file = st.file_uploader("Upload an X-ray Image", type=["jpg", "jpeg", "
 # Model selection
 model_options = {
     "Model 1 - CNN Model": "best_model.h5",
-    "Model 2 - Sample Model": "my_model.h5",
+    "Model 2 - Xception Model ": "best_model.keras",
 }
 model_choice = st.selectbox("Select a Trained Model", list(model_options.keys()))
 
@@ -35,18 +35,20 @@ if uploaded_file is not None and model_choice:
     # Display uploaded image
     st.image(uploaded_file, caption="Uploaded X-ray Image", use_column_width=True)
 
+    model_class = {'0': 'Bacterial Pneumonia', '1': 'Normal', '2': 'Viral Pneumonia'}
+
     # Load and preprocess the image
     image = Image.open(uploaded_file).convert('RGB')
     preprocessed_image = preprocess_image(image)
 
     # Load the selected model
     model_path = model_options[model_choice]
-    model = load_trained_model(model_path)
+    model = load_trained_model(f"Model\\{model_path}")
 
     # Perform prediction
     predictions = model.predict(preprocessed_image)
     predicted_class = np.argmax(predictions, axis=1)
 
     # Display the prediction results
-    st.write(f"Prediction: {predicted_class[0]}")
+    st.write(f"Prediction: {model_class[str(predicted_class[0])]}")
     st.write("Confidence Scores:", predictions[0])
