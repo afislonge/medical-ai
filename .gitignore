@@ -8,7 +8,7 @@ __pycache__/
 
 # Distribution / packaging
 Coronahack-Chest-XRay-Dataset/
-.keras
+*.keras
 .Python
 build/
 develop-eggs/
