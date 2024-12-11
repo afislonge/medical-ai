@@ -7,7 +7,7 @@ import numpy as np
 # Define a function to load and preprocess the image
 def preprocess_image(image):
     # Resize image to match model input size
-    image = image.resize((224, 224))  # Adjust dimensions if your model uses different size
+    image = image.resize((224, 224))
     image_array = np.array(image) / 255.0  # Normalize pixel values
     image_array = np.expand_dims(image_array, axis=0)  # Add batch dimension
     return image_array
