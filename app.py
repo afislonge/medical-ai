@@ -16,6 +16,9 @@ def preprocess_image(image):
 def load_trained_model(model_path):
     return load_model(model_path)
 
+#model classifications
+model_class = {'0': 'Bacterial Pneumonia', '1': 'Normal', '2': 'Viral Pneumonia'}
+
 # UI layout
 st.title("Chest X-ray Classification")
 st.write("Upload a chest X-ray image and select a model to predict the condition.")
@@ -42,14 +45,15 @@ if st.button("Predict"):
 
         # Load the selected model
         model_path = model_options[model_choice]
-        model = load_trained_model(model_path)
+        model = load_trained_model(f"Model\\{model_path}")
 
         # Perform prediction
         predictions = model.predict(preprocessed_image)
         predicted_class = np.argmax(predictions, axis=1)
 
         # Display the prediction results
-        st.write(f"Prediction: {predicted_class[0]}")
+        # st.write(f"Prediction: {predicted_class[0]}")
+        st.write(f"Prediction: {model_class[str(predicted_class[0])]}")
         st.write("Confidence Scores:", predictions[0])
     else:
         st.write("Please upload an image and select a model.")
