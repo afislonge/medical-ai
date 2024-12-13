@@ -45,7 +45,7 @@ if st.button("Predict"):
 
         # Load the selected model
         model_path = model_options[model_choice]
-        model = load_trained_model(f"Model\\{model_path}")
+        model = load_trained_model(model_path)
 
         # Perform prediction
         predictions = model.predict(preprocessed_image)
