@@ -30,12 +30,17 @@ uploaded_file = st.file_uploader("Upload an X-ray Image", type=["jpg", "jpeg", "
 model_options = {
     "Model 1 - CNN Model": "best_model.h5",
     "Model 2 - Xception Model": "best_model.keras",
+    "Model 3 - Hyper Para Xception Model": "tunned_best_mode.h5",
 }
 model_choice = st.selectbox("Select a Trained Model", list(model_options.keys()))
 
 # Prediction button
 if st.button("Predict"):
     if uploaded_file is not None and model_choice:
+
+        rt = st.secrets["db_username"]
+        print(rt)
+        
         # Display uploaded image
         st.image(uploaded_file, caption="Uploaded X-ray Image", use_column_width=True)
 

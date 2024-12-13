@@ -7,6 +7,8 @@ __pycache__/
 *.so
 
 # Distribution / packaging
+tunned_best_mode.h5
+.streamlit/
 Coronahack-Chest-XRay-Dataset/
 *.keras
 .Python
